@@ -1,17 +1,18 @@
 Set up project:
-    - Initialise node (npm init)
-    - Install expressfor the API
-    - Install TypeScript
-    - Install ts-node to be able to run TypeScript files directly
+    - Initialise node (npm init) ✅
+    - Install expressfor the API ✅
+    - Install TypeScript ✅
+    - Install ts-node to be able to run TypeScript files directly ✅
 
 Backend:
-    - create a src folder for typescript files
-    - inside folder create server.ts file for backend code
-    - add the code snippet to the server.ts file to define the classes
-    - import express modules
-    - create express instance
-        - const app = express();
-        - const PORT = 3001;
+    - create a src folder for typescript files ✅
+    - inside folder create server.ts file for backend code ✅
+    - add the code snippet to the server.ts file to define the classes ✅
+    - import express modules (had to run npm install @types/express --save-dev) ✅
+    - create express instance ✅
+        - const app = express();✅
+        - const PORT = 3001;✅
+    - create a data directory and tasks.json to store the task data ✅
     - create API endpoints
         - GET : get a list of the tasks
         - POST : add new task to list

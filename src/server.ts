@@ -1,3 +1,7 @@
+import express from "express";
+const app = express();
+const PORT = 3001;
+
 class Task {
     id: number;
     title: string;
@@ -21,3 +25,12 @@ class TaskList {
         this.tasks.push(task);
     }
 }
+
+app.use(express.json());
+
+app.get("/tasks", )
+
+
+app.listen(PORT, function () {
+	console.log(`Server is now listening on http://localhost:${PORT}`);
+});
