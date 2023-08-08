@@ -44,7 +44,7 @@ document.addEventListener("DOMContentLoaded", function () {
     // Add a click event listener to the "Add" button
     addButton.addEventListener("click", function () {
         return __awaiter(this, void 0, void 0, function () {
-            var newTaskInput, newTaskTitle, response, newTask, taskElement;
+            var newTaskInput, newTaskTitle, response, newTask, taskListElement_1;
             return __generator(this, function (_a) {
                 switch (_a.label) {
                     case 0:
@@ -68,10 +68,11 @@ document.addEventListener("DOMContentLoaded", function () {
                         return [4 /*yield*/, response.json()];
                     case 2:
                         newTask = _a.sent();
-                        taskElement = document.createElement("div");
-                        taskElement.innerHTML = "\n        <p class=\"task-text-display\">".concat(newTask.title, "</p>\n          <input type=\"checkbox\" name=\"completed\" id=\"completed\" />\n          <button class=\"delete-button\" data-id=\"").concat(newTask.id, "\">Delete</button>\n          \n        ");
-                        // Append the new task element to the task list container
-                        taskListElement === null || taskListElement === void 0 ? void 0 : taskListElement.appendChild(taskElement);
+                        taskListElement_1 = document.createElement("div");
+                        taskListElement_1.classList.add("task-list");
+                        taskListElement_1.innerHTML = "\n                <input\n                type=\"checkbox\"\n                name=\"completed\"\n                id=\"completed\"\n                class=\"checkbox\"\n                />\n                <p class=\"task-text-display\">".concat(newTask.title, "</p>\n                <button class=\"delete-button\">Delete</button>\n         ");
+                        // Append the new task list element to the body
+                        document.body.appendChild(taskListElement_1);
                         // Clear the input field after adding the task
                         newTaskInput.value = "";
                         _a.label = 3;

@@ -40,6 +40,7 @@ var express = require("express");
 var fs = require("node:fs/promises");
 var app = express();
 var PORT = 3001;
+var jsonFilePath = '/ToDoApp/src/tasks.json';
 // This represents the structure of a task and types of each element of the task
 var Task = /** @class */ (function () {
     function Task(id, title) {
@@ -107,10 +108,18 @@ app.post('/tasks', function (req, res) { return __awaiter(void 0, void 0, void 0
         }
     });
 }); });
-//PUT to toggle a task completed or not
-// app.put('/tasks/:taskId/togglecomplete' , (req, res) => {
-// });
+//PUT/PATCH to toggle a task completed or not
+// This should use the taskID to update the task "done" section to true
+// So I think patch would work because it only needs to update one part of the 'Task'
+app.patch('/tasks/:taskId/togglecomplete', function (req, res) { return __awaiter(void 0, void 0, void 0, function () {
+    var taskId;
+    return __generator(this, function (_a) {
+        taskId = req.params.taskId;
+        return [2 /*return*/];
+    });
+}); });
 // DELETE a task
+// This should get the task by taskID and then delete only that task from the json file.
 // app.delete('/tasks/:taskID' , (req, res) => {
 //     const deleteTask = req.body;
 // });

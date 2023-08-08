@@ -67,13 +67,15 @@ body {
 
 .task-list {
 display: flex;
-flex-direction: column;
-justify-content: flex-start;
-align-items: baseline;
+flex-direction: row;
+flex-wrap: wrap;
+justify-content: center;
+align-items: center;
 width: 50vw;
 height: fit-content;
 background-color: white;
 border: 2px solid black;
 border-radius: 2rem;
-padding: 2rem;
+padding: 3rem;
 }
+

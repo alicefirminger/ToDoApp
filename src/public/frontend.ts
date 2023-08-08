@@ -33,16 +33,22 @@ document.addEventListener("DOMContentLoaded", function () {
         // Parse the JSON response from the server
         const newTask = await response.json();
   
-        // Create a new task element
-        const taskElement = document.createElement("div");
-        taskElement.innerHTML = `
-        <p class="task-text-display">${newTask.title}</p>
-          <input type="checkbox" name="completed" id="completed" />
-          <button class="delete-button" data-id="${newTask.id}">Delete</button>
-          
-        `;
-        // Append the new task element to the task list container
-        taskListElement?.appendChild(taskElement);
+         // Create the task list element
+         const taskListElement = document.createElement("div");
+         taskListElement.classList.add("task-list"); 
+         taskListElement.innerHTML = `
+                <input
+                type="checkbox"
+                name="completed"
+                id="completed"
+                class="checkbox"
+                />
+                <p class="task-text-display">${newTask.title}</p>
+                <button class="delete-button">Delete</button>
+         `;
+         
+         // Append the new task list element to the body
+         document.body.appendChild(taskListElement);
 
         // Clear the input field after adding the task
         newTaskInput.value = "";
